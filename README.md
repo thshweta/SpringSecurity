@@ -1,4 +1,3 @@
-
 # 🔐 Spring Security Practice Project
 
 This is a small hands-on project created to **understand the internal workings of Spring Security** — beyond just the defaults.  
@@ -8,11 +7,12 @@ The goal was to **learn by doing**, experimenting with custom configurations and
 
 ## 💡 Features Implemented
 
-  ✅ Custom Login Flow  
-  ✅ CSRF Token Handling  
-  ✅ Custom Security Configuration Class  
-  ✅ User Verification from MySQL Database  
-  ✅ Bcrypt Password Hashing for Secure Storage  
+✅ Custom Login Flow  
+✅ CSRF Token Handling  
+✅ Custom Security Configuration Class  
+✅ User Verification from MySQL Database  
+✅ Bcrypt Password Hashing for Secure Storage  
+✅ **JWT Token Generation & Validation** for stateless authentication  
 
 This project isn't meant for production — it's more of a **learning playground** where I could tinker and see how things actually work under the hood.
 
@@ -25,6 +25,7 @@ This project isn't meant for production — it's more of a **learning playground
 - Spring Web  
 - Spring Data JPA  
 - Spring Security  
+- **JWT (JSON Web Token)**  
 - MySQL  
 - IntelliJ IDEA  
 
@@ -34,34 +35,39 @@ This project isn't meant for production — it's more of a **learning playground
 
 Initially, getting into Spring Security was honestly a bit overwhelming — with filters, encoders, CSRF tokens, and custom configurations flying around.  
 But with time, practice, and experimentation, things started connecting — and it all began to make much more sense.  
-It’s been a **very rewarding experience** to get the basics working myself and gain clarity on what happens behind the scenes.
+It’s been a **very rewarding experience** to get the basics working myself and gain clarity on what happens behind the scenes.  
 
+Implementing JWT added a whole new layer of understanding — especially around stateless authentication, filters, and secure token handling.
 
 ---
 
 ## 📂 Project Structure
 
+
 ```
-src
-└── main
-    └── java
-        └── com.example.SpringSecurity
-            ├── Configurations
+src/
+└── main/
+    └── java/
+        └── com/example/SpringSecurity/
+            ├── Configurations/
+            │   ├── JwtFilter.java
             │   └── SecurityConfig.java
-            ├── Controller
+            ├── Controller/
             │   ├── HelloController.java
             │   ├── StudentController.java
             │   └── UserController.java
-            ├── Model
+            ├── Model/
             │   ├── Student.java
             │   ├── UserPrincipal.java
             │   └── Users.java
-            ├── Repository
+            ├── Repository/
             │   └── UserRepo.java
-            ├── Service
+            ├── Service/
+            │   ├── JWTService.java
             │   ├── MyUserDetailService.java
             │   └── UserService.java
             └── SpringSecurityApplication.java
+
 ```
 
 ---
